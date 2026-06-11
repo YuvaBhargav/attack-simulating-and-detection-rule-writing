@@ -37,7 +37,7 @@ Three VMs running on VirtualBox connected through a Host-Only network.
 
 ## Architecture Diagram
 
-![Fintech Detection Lab Architecture](./docs/architecture.png)
+![Fintech Detection Lab Architecture](./Docs/architecture.png)
 
 ### Current Environment
 
