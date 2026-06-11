@@ -35,6 +35,65 @@ Three VMs running on VirtualBox connected through a Host-Only network.
 
 ---
 
+## Architecture Diagram
+
+![Fintech Detection Lab Architecture](./docs/architecture.png)
+
+### Current Environment
+
+```text
+Windows Host (16GB RAM)
+│
+├── Kali Linux (192.168.56.10)
+│   ├── 2GB RAM / 20GB Disk
+│   ├── Hydra
+│   └── Python attack scripts
+│
+├── Ubuntu Victim (192.168.56.20)
+│   ├── 2GB RAM / 20GB Disk
+│   ├── Elastic Agent
+│   └── Flask API (Week 2)
+│
+└── Elastic SIEM (192.168.56.30)
+    ├── Elasticsearch :9200
+    ├── Kibana :5601
+    └── Fleet Server :8220
+```
+
+### Log Flow
+
+```text
+Ubuntu Victim
+      │
+      ▼
+Elastic Agent
+      │
+      ▼
+Fleet Server (:8220)
+      │
+      ▼
+Elasticsearch (:9200)
+      │
+      ▼
+Kibana (:5601)
+      │
+      ▼
+Windows Browser
+```
+
+### Week 1 Status
+
+✅ Host-only network operational
+
+✅ Elasticsearch healthy
+
+✅ Kibana accessible
+
+✅ Fleet Server enrolled
+
+✅ Elastic Agent connected
+
+✅ 1,679 log events successfully ingested
 # Network Layout
 
 ```text
